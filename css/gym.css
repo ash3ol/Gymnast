@@ -1,0 +1,1481 @@
+/* start variables  */
+* {
+    --main-color: #e31c25;
+    --main-color1: #111;
+    --main-color2: #666;
+    --main-padding: 100px;
+    --h2main-colo: #343a40;
+}
+
+/* end variables  */
+/* start global rules  */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+::selection {
+    background-color: var(--main-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+h1,
+h2,
+h3 {
+    transform: scaleY(1.2);
+    letter-spacing: -1px;
+}
+
+@media (min-width: 767px) {
+    .container {
+        width: 750px;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* end global rules  */
+/* start headding */
+.main-headding {
+    margin: auto;
+    width: fit-content;
+    text-align: center;
+    padding-bottom: 80px;
+    letter-spacing: -1px;
+    transform: scaleY(1.5);
+}
+
+.main-headding h4 {
+    color: var(--main-color);
+    padding: 10px 0;
+    font-size: 20px;
+}
+
+.main-headding h2 {
+    color: var(--h2main-colo);
+    font-size: 40px;
+}
+
+@media (max-width: 767px) {
+
+    .main-headding h2,
+    .main-headding h3 {
+        font-size: calc(0.67rem + 3vw);
+    }
+}
+
+/* end headding */
+/* start header  */
+header {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 110px;
+}
+
+header h1 a {
+    font-size: calc(1rem + 2vw);
+    margin: 0.67em 0;
+    margin-left: 20px;
+    font-family: sans-serif;
+    font-weight: 900;
+    color: white;
+    transition: 0.3s;
+}
+
+header h1 a:hover {
+    color: var(--main-color);
+}
+
+header .links {
+    display: flex;
+    align-items: center;
+    background-color: #111;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+header .links li {
+    text-transform: capitalize;
+    padding: 5px 0;
+    display: flex;
+}
+
+header .links li a {
+    text-transform: capitalize;
+    color: white;
+    font-weight: 600;
+    margin: 0 20px;
+    padding: 30px 0px;
+    transition: 0.3s;
+}
+
+header .links li:nth-child(5)>a {
+    position: relative;
+}
+
+header .links li:nth-child(5)>a::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0d7";
+    position: absolute;
+    right: -15px;
+    color: white;
+    transition: 0.3s;
+    font-weight: 900;
+}
+
+header .links li:nth-child(5) a:hover::before {
+    color: var(--main-color);
+}
+
+header .links li a:hover {
+    color: var(--main-color);
+}
+
+header .links .more {
+    position: absolute;
+    background-color: white;
+    bottom: -30px;
+    display: none;
+}
+
+header .links li:nth-child(5):hover .more {
+    display: block;
+}
+
+header .links .more li {
+    padding: 0;
+}
+
+header .links .more a {
+    color: var(--main-color2);
+    padding: 7px;
+}
+
+header .links .more li:hover {
+    background-color: #dcdcdc;
+}
+
+header .links li .selected {
+    color: var(--main-color);
+}
+
+header .bars {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    header {
+        background-color: var(--main-color1);
+    }
+
+    nav {
+        margin-right: 15px;
+    }
+
+    header .links {
+        display: none;
+    }
+
+    header .bars {
+        display: block;
+        padding: 10px 20px;
+        color: #666;
+        border: solid 2px #292929;
+        font-size: 25px;
+    }
+
+    header nav:hover .links {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        right: -20px;
+        top: 80px;
+        width: 100%;
+    }
+
+    header nav:hover .links li {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    header nav:hover .links li a {
+        width: 100%;
+        font-weight: normal;
+        font-size: 20px;
+        padding: 18px;
+    }
+
+    header .links li:nth-child(5):hover .more {
+        right: 5px;
+        bottom: -35px;
+    }
+}
+
+/* end header  */
+/* start landing */
+.landing {
+    position: relative;
+    background-image: url(../image/carousel-2.jpg);
+    background-size: cover;
+    height: calc(100vh + 100px);
+    width: 100%;
+}
+
+.landing::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 40%);
+}
+
+.landing .start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    letter-spacing: -1px;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.landing .start p {
+    color: var(--main-color);
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.landing .start h1 {
+    color: white;
+    font-size: 60px;
+    padding: 0;
+    margin: 45px 0;
+    font-weight: 700;
+}
+
+.landing .start a {
+    width: fit-content;
+    display: block;
+    color: white;
+    background-color: transparent;
+    padding: 20px 60px;
+    border: solid white 2px;
+    margin: 20px auto;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+@media (max-width: 992px) {
+    .landing .start h1 {
+        font-size: calc(0.67rem + 5vw);
+    }
+}
+
+.landing .start a:hover {
+    background-color: white;
+    color: var(--main-color2);
+}
+
+.landing .right,
+.landing .left {
+    position: absolute;
+    color: var(--main-color2);
+    font-size: 30px;
+    transform: translateX(-50%);
+    height: 113%;
+    display: flex;
+    align-items: center;
+}
+
+.landing .right {
+    right: 20px;
+}
+
+.landing .left {
+    left: 20px;
+}
+
+/* end landing */
+/* start sections  */
+.sections {
+    margin-top: -100px;
+    padding-bottom: var(--main-padding);
+}
+
+.sections .container {
+    display: flex;
+    position: relative;
+    min-height: 400px;
+}
+
+.section1,
+.section2 {
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 0 20px;
+}
+
+.section1 {
+    background-image: url(../image/sections/body2.png);
+    background-position: bottom left;
+    background-color: var(--main-color);
+    text-align: end;
+}
+
+.section2 {
+    background-image: url(../image/sections/muscle.png);
+    background-color: var(--main-color1);
+    background-position: bottom right;
+    text-align: start;
+}
+
+.sections h2 {
+    color: white;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 20px;
+}
+
+.sections p {
+    color: white;
+    line-height: 1.8;
+    font-size: 17px;
+    padding: 0 20px;
+}
+
+.section1 a,
+.section2 a {
+    color: white;
+    background-color: transparent;
+    border: solid 2px white;
+    padding: 15px 30px;
+    display: block;
+    width: fit-content;
+    transition: 0.3s;
+}
+
+.sections a:hover {
+    background-color: white;
+    color: var(--main-color2);
+
+}
+
+.section1 a {
+    margin: 30px 20px 0px auto;
+}
+
+.section2 a {
+    margin: 20px auto 0px 20px;
+}
+
+@media (max-width: 992px) {
+    .sections .container {
+        flex-direction: column;
+    }
+
+    .sections h2 {
+        font-size: calc(1.67rem + 0.5vw);
+    }
+
+    .section1 a {
+        margin: 30px 20px 30px auto;
+    }
+
+    .section2 a {
+        margin: 20px auto 30px 20px;
+    }
+}
+
+/* end sections  */
+/* start team  */
+.team {
+    padding-bottom: var(--main-padding);
+}
+
+.team .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team .container .image {
+    flex-basis: 50%;
+}
+
+.team .container .image img {
+    width: 100%;
+}
+
+.team .identity {
+    flex-basis: 50%;
+    padding: 0 20px;
+}
+
+.team .identity .exp h2 {
+    color: var(--h2main-colo);
+    font-size: 40px;
+    transform: scaleY(1.7);
+    letter-spacing: -1px;
+    font-weight: 800;
+}
+
+.team .identity .exp p {
+    padding: 20px 0;
+    color: var(--main-color2);
+    line-height: 1.4;
+}
+
+.team .identity .acheivements {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.team .acheivements .awards i {
+    font-weight: 900;
+    color: var(--main-color);
+    font-size: 70px;
+}
+
+.team .acheivements .awards .text {
+    padding: 20px 0;
+}
+
+.team .acheivements .awards h3 {
+    color: var(--h2main-colo);
+}
+
+.team .acheivements .awards p {
+    padding: 10px 0;
+    line-height: 1.4;
+}
+
+.team a {
+    display: block;
+    color: var(--main-color);
+    padding: 10px 20px;
+    border: solid 2px var(--main-color);
+    font-size: 18px;
+    width: fit-content;
+    transition: 0.3s;
+}
+
+.team a:hover {
+    color: white;
+    background-color: var(--main-color);
+}
+
+@media (max-width: 992px) {
+    .team .container {
+        flex-direction: column;
+    }
+
+    .team .container .image {
+        flex-basis: 100%;
+    }
+
+    .team .identity {
+        flex-basis: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .team a {
+        margin: auto;
+    }
+
+    .team .identity .exp h2 {
+        font-size: calc(0.68rem + 4vw);
+    }
+}
+
+@media (max-width: 767px) {
+    .team .identity .acheivements {
+        padding: 0px;
+        flex-direction: column;
+    }
+}
+
+/* end team  */
+/* start features  */
+.features {
+    padding-bottom: var(--main-padding);
+    display: flex;
+}
+
+.features .box {
+    display: flex;
+    background-color: var(--main-color1);
+    align-items: center;
+    height: 300px;
+}
+
+.features .box:nth-child(2) {
+    background-color: var(--main-color);
+}
+
+.features .box i {
+    font-weight: 900;
+    padding: 20px;
+    font-size: 60px;
+    color: var(--main-color);
+}
+
+.features .box:nth-child(2) i {
+    color: black;
+}
+
+.features .box .text h3 {
+    color: white;
+    font-size: 25px;
+    padding: 20px 0;
+}
+
+.features .box .text p {
+    color: #ffffffde;
+    line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+    .features {
+        flex-direction: column;
+    }
+}
+
+/* end features  */
+/* start choose us  */
+.choice {
+    padding-bottom: var(--main-padding);
+}
+
+.choice .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    row-gap: 40px;
+}
+
+.choice .container .box {
+    display: flex;
+    align-items: center;
+}
+
+.choice .container .box .image {
+    position: relative;
+    flex-basis: 200%;
+}
+
+.choice .box img {
+    width: 100%;
+}
+
+.choice .box i {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    color: white;
+    background-color: var(--main-color);
+    font-size: 30px;
+    font-weight: 700;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.choice .box .text {
+    padding: 0 10px;
+}
+
+.choice .box .text h3 {
+    color: var(--h2main-colo);
+    padding: 0 20px;
+}
+
+@media (max-width: 767px) {
+    .choice .container {
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    }
+
+    .choice .container .box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .choice .box .text h3 {
+        padding-top: 20px;
+    }
+}
+
+.choice .box .text p {
+    padding: 15px 20px;
+    color: var(--main-color2);
+    line-height: 1.4;
+}
+
+/* end choose us  */
+/* star sub  */
+.sub {
+    margin-bottom: var(--main-padding);
+    background-image: url(../image/sub/h3-slider-img-1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 20px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub h2 {
+    font-size: 40px;
+    color: white;
+}
+
+.sub p {
+    color: white;
+    padding: 20px;
+}
+
+.sub .form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.sub .form input[type="email"] {
+    padding: 15px 10px;
+}
+
+.sub .form input[type="submit"] {
+    color: white;
+    background-color: var(--main-color);
+    border: solid var(--main-color);
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.sub .form input[type="submit"]:hover {
+    background-color: #e31c26c5;
+    border: solid #e31c2600;
+}
+
+@media (max-width: 767px) {
+    .sub h2 {
+        font-size: calc(0.6rem + 3vw);
+    }
+
+    .sub p {
+        font-size: calc(0.6rem + 0.5vw);
+    }
+
+    .sub .form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .sub .form input[type="email"] {
+        width: 100%;
+    }
+
+    .sub .form input[type="submit"] {
+        width: 50%;
+    }
+}
+
+/* end sub  */
+/* start timetable */
+.timetable {
+    padding-bottom: var(--main-padding);
+}
+
+.timetable .container .bottons {
+    margin: 0 auto 30px;
+    width: fit-content;
+    position: relative;
+    display: flex;
+}
+
+.timetable .container .bottons a {
+    color: var(--main-color);
+    padding: 10px;
+    transition: 0.3s;
+    font-size: calc(0.3rem + 0.7vw);
+    display: inline-block;
+}
+
+.timetable .container .bottons a:hover {
+    color: white;
+    background-color: var(--main-color);
+}
+
+.timetable .container .bottons .selected {
+    color: white;
+    background-color: var(--main-color);
+}
+
+table {
+    text-align: center;
+    border-style: none;
+    border-spacing: 0;
+}
+
+.table-res {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table thead th {
+    color: white;
+    background-color: var(--main-color1);
+    width: 150px;
+    padding: 15px 0;
+}
+
+table thead th:first-child {
+    width: 200px;
+    padding: 0 30px;
+}
+
+table tbody td,
+th {
+    border: 1px solid #ddd;
+    font-weight: bold;
+    padding: 0 30px;
+}
+
+table tbody td span {
+    font-weight: normal;
+    display: block;
+    padding: 5px 0;
+    color: var(--main-color2);
+}
+
+table tbody td:first-child {
+    background-color: var(--main-color1);
+    color: white;
+    padding: 30px 0;
+    font-weight: 600;
+}
+
+table tbody .cardio {
+    background-color: var(--main-color);
+    color: white;
+}
+
+table tbody .cardio span {
+    color: white;
+}
+
+/* end timetable */
+/* start bmi  */
+.bmi {
+    position: relative;
+    margin-bottom: var(--main-padding);
+    height: 450px;
+    display: flex;
+    align-items: center;
+}
+
+.bmi::before {
+    content: "";
+    background-color: rgb(0 0 0 / 40%);
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.bmi::after {
+    content: "";
+    background-image: url(../image/carousel-2.jpg);
+    background-size: cover;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.bmi .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.bmi .box1 {
+    width: 100%;
+}
+
+.bmi .box1 h3 {
+    color: var(--main-color);
+}
+
+.bmi .box1 h2 {
+    color: white;
+    font-size: 35px;
+    padding: 20px 0;
+}
+
+.bmi .box1 p {
+    color: white;
+    line-height: 1.4;
+    position: relative;
+    font-size: 18px;
+}
+
+.bmi .box2 {
+    background-color: var(--main-color1);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bmi .box2 h2 {
+    color: white;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.bmi .form {
+    padding: 0 20px;
+    text-align: center;
+}
+
+.bmi .box2 .inp {
+    padding: 20px 20px;
+    background-color: #423d3d;
+    border: transparent 2px solid;
+    margin-bottom: 20px;
+    width: calc(50% - 5px);
+    transition: 0.3s;
+    color: rgb(236, 236, 236);
+}
+
+.bmi .box2 select {
+    padding: 18.7px 20px !important;
+}
+
+.bmi .box2 .inp::placeholder {
+    color: rgb(236, 236, 236);
+    transition: 0.4s;
+}
+
+.bmi .box2 .inp:focus {
+    border: var(--main-color) solid 2px;
+    outline: transparent;
+}
+
+.bmi .box2 .inp:focus::placeholder {
+    color: transparent;
+}
+
+.bmi input[type="submit"] {
+    background-color: #302f2f;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    border: white solid 1px;
+    width: calc(100% - 5px);
+    padding: 20px;
+}
+
+.bmi input[type="submit"]:hover {
+    background-color: #201d1d;
+}
+
+@media (max-width:767px) {
+    .bmi .box1 {
+        display: none;
+    }
+
+    .bmi::before,
+    .bmi::after {
+        display: none;
+    }
+}
+
+/* end bmi  */
+/* start trainers */
+.trainers {
+    padding-bottom: var(--main-padding);
+}
+
+.trainers .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.trainers .box {
+    position: relative;
+    overflow: hidden;
+}
+
+.trainers .box img {
+    width: 100%;
+
+}
+
+.trainers .box .links {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0 0 0 / 40%);
+    transform: translateY(100%);
+    transition: 0.5s;
+}
+
+.trainers .box:hover .links {
+    transform: translateY(0%);
+}
+
+.trainers .box .links i {
+    border-radius: 50%;
+    border: solid white 2px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.trainers .box .links i:hover {
+    color: var(--main-color1);
+    background-color: white;
+}
+
+.trainers .box .text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--main-color1);
+    text-align: center;
+}
+
+.trainers .box .text h3 {
+    color: var(--main-color);
+    padding: 20px 0;
+}
+
+.trainers .box .text p {
+    color: white;
+    padding-bottom: 20px;
+}
+
+/* end trainers */
+/* start testimonials */
+.testimonials {
+    position: relative;
+    margin-bottom: var(--main-padding);
+    height: 450px;
+    display: flex;
+    align-items: center;
+}
+
+.testimonials::before {
+    content: "";
+    background-color: rgb(0 0 0 / 40%);
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.testimonials::after {
+    content: "";
+    background-image: url(../image/carousel-2.jpg);
+    background-size: cover;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.testimonials .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.testimonials .box1 {
+    width: 103%;
+    background-color: var(--main-color1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.testimonials .box1 .client {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-left: 20px;
+}
+
+.testimonials .box1 .image {
+    width: 75px;
+    border: solid #343a40 7px;
+    border-radius: 50%;
+}
+
+.testimonials .box1 img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.testimonials .box1 h3 {
+    color: var(--main-color);
+    padding: 15px 20px;
+}
+
+.testimonials .box1 .client .prag {
+    color: white;
+    padding: 0 20px;
+}
+
+.testimonials .box1 .about {
+    color: white;
+    line-height: 1.4;
+    margin: 20px 30px;
+    background-color: #343a40;
+    padding: 20px;
+    border: white solid 1px;
+    position: relative;
+}
+
+.testimonials .box1 .about::before {
+    content: "";
+    border: solid 13px;
+    border-color: transparent transparent #343a40 transparent;
+    position: absolute;
+    top: -26px;
+    left: 10px;
+    z-index: 1;
+}
+
+.testimonials .box1 .about::after {
+    content: "";
+    border: solid 15px;
+    border-color: transparent transparent white transparent;
+    position: absolute;
+    top: -30px;
+    left: 8px;
+    z-index: 0;
+}
+
+.testimonials .box1 .bars {
+    display: flex;
+    gap: 5px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.testimonials .box1 .bars span {
+    height: 5px;
+    width: 25px;
+    background-color: #343a40;
+    cursor: pointer;
+}
+
+.testimonials .box1 .bars .selected {
+    background-color: white;
+}
+
+.testimonials .box2 {
+    width: 100%;
+    padding-left: 20px;
+}
+
+.testimonials .box2 h3 {
+    color: var(--main-color);
+}
+
+.testimonials .box2 h2 {
+    color: white;
+    font-size: 35px;
+    padding: 20px 0;
+}
+
+.testimonials .box2 p {
+    color: white;
+    line-height: 1.4;
+    position: relative;
+    font-size: 18px;
+}
+
+@media (max-width:767px) {
+    .testimonials .box2 {
+        display: none;
+    }
+
+    .testimonials::before,
+    .testimonials::after {
+        display: none;
+    }
+}
+
+/* end testimonials */
+/* start blog */
+.blog {
+    padding-bottom: var(--main-padding);
+}
+
+.blog .container {
+    display: flex;
+    gap: 40px;
+}
+
+.blog .box {
+    width: 50%;
+}
+
+.blog img {
+    max-width: 100%;
+    height: 350px;
+}
+
+.blog .content {
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+}
+
+.blog .content .date {
+    background-color: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 80px;
+    justify-content: center;
+    color: white;
+    padding: 22px;
+}
+
+.blog .content .date span {
+    display: block;
+    font-size: 14px;
+}
+
+.blog .head {
+    margin-left: 10px;
+}
+
+.blog .head h2 {
+    color: var(--h2main-colo);
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.blog .head .status {
+    display: flex;
+}
+
+.blog .head .status div {
+    color: var(--main-color2);
+    font-size: 13px;
+    padding: 0 5px;
+}
+
+.blog .head .status i {
+    padding-right: 5px;
+}
+
+.blog p {
+    color: var(--main-color2);
+    line-height: 1.4;
+    max-width: 100%;
+}
+
+.blog a {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 30px 10px 20px;
+    border: solid 2px var(--main-color);
+    width: fit-content;
+    color: var(--main-color);
+    transition: 0.3s;
+    position: relative;
+}
+
+.blog a::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f054";
+    right: 5px;
+    font-weight: bold;
+    padding-right: 5px;
+    font-size: 15px;
+    position: absolute;
+    color: var(--main-color);
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+.blog a:hover {
+    color: white;
+    background-color: var(--main-color);
+}
+
+.blog a:hover::before {
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .blog .container {
+        flex-direction: column;
+    }
+
+    .blog .box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .blog .head h2 {
+        font-size: calc(0.4em + 3vw);
+    }
+}
+
+/* end blog */
+/* start footer  */
+footer {
+    background-image: url(../image/blog/3.jpg);
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+footer::before {
+    content: "";
+    background-color: rgb(0 0 0 / 80%);
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+footer .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    width: 100%;
+    gap: 10px;
+    padding: 50px 0;
+}
+
+footer .box {
+    position: relative;
+    height: 100%;
+    padding-left: 30px;
+    padding-top: 50px;
+}
+
+footer .box h2 {
+    color: var(--main-color);
+    padding: 0 20px;
+    font-size: 20px;
+}
+
+footer .box address {
+    color: white;
+    line-height: 2.4;
+    padding: 15px 20px 15px;
+}
+
+footer .box .social {
+    padding: 0 20px;
+    display: flex;
+}
+
+footer .box .social a {
+    color: white;
+    border-radius: 50%;
+    border: solid 2px white;
+    margin: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+footer .box .social a:hover {
+    color: black;
+    background-color: white;
+}
+
+footer .box .links {
+    padding: 20px;
+}
+
+footer .box .links li {
+    padding-bottom: 15px;
+}
+
+footer .box .links li a {
+    color: white;
+    transition: 0.3s;
+}
+
+footer .box .links li a:hover {
+    color: var(--main-color);
+    letter-spacing: 2px;
+}
+
+footer .box .links li a::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f054";
+    left: 0px;
+    font-weight: bold;
+    color: white;
+    padding-right: 5px;
+    font-size: 11px;
+}
+
+footer .box .date {
+    color: white;
+    padding: 0 20px;
+}
+
+footer .box .date .day {
+    padding: 20px 0 10px;
+    font-weight: 800;
+}
+
+footer .box .date .time {
+    padding-bottom: 15px;
+}
+
+footer .copyright {
+    color: white;
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 50px 0;
+    font-size: calc(0.5rem + 0.5vw);
+}
+
+footer .copyright::before {
+    content: "";
+    background-color: #343a40;
+    position: absolute;
+    top: 0%;
+    width: 200%;
+    height: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+footer .copyright a {
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 2px;
+    transition: 0.3s;
+}
+
+footer .copyright a:hover {
+    color: var(--main-color);
+}
+
+@media (max-width: 767px) {
+    footer .box {
+        text-align: center;
+    }
+
+    footer .box .social {
+        justify-content: center;
+    }
+}
+
+/* end footer  */
